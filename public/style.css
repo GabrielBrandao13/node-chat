@@ -1,0 +1,69 @@
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin:0;
+    padding:0;
+}
+.container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height: 100vh;
+    flex-flow: column nowrap;
+    background-color:whitesmoke;
+}
+
+.menu{
+    width:500px;
+    min-height:600px;
+    background-color:rgb(7, 5, 19);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.250);
+    display:grid;
+
+    grid-template-rows:1fr 50px;
+}
+
+.chat{
+    width:500px;
+    height:600px;
+    display:flex;
+    flex-flow: column nowrap;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.250);
+
+    grid-row: 1 / 2;
+
+    overflow-y:auto;
+
+}
+
+.chat::-webkit-scrollbar-track{
+    background-color:rgb(0, 0, 0);
+}
+.chat::-webkit-scrollbar{
+    width:5px;
+}
+.chat::-webkit-scrollbar-thumb{
+    background-color: rgb(46, 23, 179);
+    border-radius: 2px;
+}
+
+
+.chatbar{
+    grid-row: 2 / 3;
+    outline:none;
+    font-size:17pt;
+    text-align: end;
+    background:none;
+    border: .5px solid rgb(0, 0, 134);
+    color:white;
+    padding:2px;
+}
+
+.chatbar:focus{
+    border: 1px solid rgb(0, 0, 255);
+}
+
+.mensagem{
+    margin:5px;
+    color:white;
+    padding: 5px;
+}
