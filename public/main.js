@@ -28,7 +28,3 @@ socket.on('chat', msg => {
     chat.appendChild(msgHTML)
 })
 
-
-socket.on('loginConfirm', user => {
-    console.log(user)
-})
