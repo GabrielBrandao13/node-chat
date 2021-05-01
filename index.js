@@ -1,30 +1,39 @@
 const express = require('express')
 const http = require('http')
-const app = express()
-const server = http.createServer(app)
 
+const routes = require('./routes')
+
+const app = express()
+app.set('view engine', 'ejs')
+const server = http.createServer(app)
 
 const { Server } = require('socket.io')
 const io = new Server(server)
 
+app.use(express.urlencoded({ extended: true }));
+app.use(routes)
 
-
-app.use('/', express.static('public'))
+const users = {}
 
 io.on('connection', socket => {
-    console.log('Usuário se conectou!')
-    console.log(socket.id)
+    console.log(`Usuário ${socket.id} se conectou`)
 
     socket.on('disconnect', () => {
-        console.log(`Usuário ${socket.id} desconectou-se`)
+        console.log(`Usuário ${users[socket.id]} desconectou-se!`)
+        delete users[socket.id]
     })
 
     socket.on('chat', msg => {
-        console.log(`${socket.id}: ${msg}`)
-        io.emit('chat', `${socket.id}: ${msg}`)
+        io.emit('chat', `${users[socket.id]}: ${msg}`)
+    })
+
+    socket.on('login', user => {
+        users[socket.id] = user
+        // console.log(users)
     })
 
 })
+
 
 
 const port = process.env.PORT || 3000
@@ -32,3 +41,4 @@ const port = process.env.PORT || 3000
 server.listen(port, () => {
     console.log(`Projeto rodando em http://localhost:${port}`)
 })
+

@@ -19,10 +19,16 @@ function sendMessage(e) {
 
 }
 
+
 socket.on('chat', msg => {
     const msgHTML = document.createElement('div')
     msgHTML.className = 'mensagem'
     msgHTML.loading = 'lazy'
     msgHTML.textContent = msg
     chat.appendChild(msgHTML)
+})
+
+
+socket.on('loginConfirm', user => {
+    console.log(user)
 })
