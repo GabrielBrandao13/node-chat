@@ -21,10 +21,20 @@ function sendMessage(e) {
 
 
 socket.on('chat', msg => {
+    const { author, text } = JSON.parse(msg)
+    loadMessage(`${author}: ${text}`, 'mensagem')
+})
+
+socket.on('warn', warning => {
+    loadMessage(warning, 'aviso')
+})
+
+function loadMessage(msg, type) {
     const msgHTML = document.createElement('p')
-    msgHTML.className = 'mensagem'
+    msgHTML.className = type
     msgHTML.loading = 'lazy'
+
     msgHTML.textContent = msg
     chat.appendChild(msgHTML)
-})
+}
 

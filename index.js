@@ -16,20 +16,26 @@ app.use(routes)
 const users = {}
 
 io.on('connection', socket => {
-    console.log(`Usuário ${socket.id} se conectou`)
+    // console.log(`Usuário ${socket.id} se conectou`)
 
     socket.on('disconnect', () => {
-        console.log(`Usuário ${users[socket.id]} desconectou-se!`)
+        // console.log(`${users[socket.id]} desconectou-se!`)
+        io.emit('warn', `${users[socket.id]} saiu da conversa.`)
         delete users[socket.id]
     })
 
     socket.on('chat', msg => {
-        io.emit('chat', `${users[socket.id]}: ${msg}`)
+        const message = {
+            author: users[socket.id],
+            text: msg
+        }
+        io.emit('chat', JSON.stringify(message))
     })
 
     socket.on('login', user => {
         users[socket.id] = user
-        // console.log(users)
+        io.emit('warn', `${users[socket.id]} entrou na conversa.`)
+        // console.log('usuario logou')
     })
 
 })
