@@ -1,0 +1,65 @@
+*{
+    margin:0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+    display:flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    height:100vh;
+    animation-name: rainbow;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+
+.menu{
+    background-color:rgb(224, 224, 224);
+    width:300px;
+    height:200px;
+    padding:10px;
+    display:flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    border-radius:10px;
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.3);
+}
+
+.menu p{
+    font-size: 14pt;
+    color:rgb(39, 39, 39);
+}
+.link-voltar{
+    color: rgb(255, 255, 255);
+    margin: 10px;
+    font-size: 15pt;
+}
+
+@media(max-width: 300px){
+    .menu{
+        width:100%;
+    }
+}
+
+@keyframes rainbow{
+    0%{
+        background-color: rgb(255, 0, 43);
+    }
+    20%{
+        background-color: rgb(234, 0, 255);
+    }
+    40%{
+        background-color: rgb(47, 0, 255);
+    }
+    60%{
+        background-color: rgb(0, 255, 255);
+    }
+    80%{
+        background-color: rgb(51, 255, 0);
+    }
+    100%{
+        background-color: rgb(255, 153, 0);
+    }
+
+}
