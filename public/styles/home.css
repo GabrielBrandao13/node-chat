@@ -12,14 +12,76 @@ body{
     align-items: center;
     justify-content: center;
     min-height:100vh;
+    animation-name: rainbow;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+
+h1{
+    color:white;
 }
 
 .menu{
     width: 400px;
     height:300px;
-    background:red;
+    background:rgb(255, 255, 255);
     display:flex;
     flex-flow: column nowrap;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
+    border-radius:5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.input-name{
+    outline:none;
+    border:none;
+    background-color:rgb(194, 194, 194);
+    padding:5px;
+    border-radius: 5px;
+}
+
+.label-name{
+    margin:2px;
+}
+
+button[type="submit"]{
+    color:white;
+    background-color:black;
+    outline:none;
+    border:none;
+    padding:5px;
+    font-size:12pt;
+    cursor:pointer;
+    border-radius: 5px;
+    margin:5px;
+}
+
+@keyframes rainbow{
+    0%{
+        background-color: rgb(255, 0, 43);
+    }
+    20%{
+        background-color: rgb(234, 0, 255);
+    }
+    40%{
+        background-color: rgb(47, 0, 255);
+    }
+    60%{
+        background-color: rgb(0, 255, 255);
+    }
+    80%{
+        background-color: rgb(51, 255, 0);
+    }
+    100%{
+        background-color: rgb(255, 153, 0);
+    }
+
+}
+
+
+@media(max-width:450px){
+    .menu{
+        width:100%;
+    }
 }
