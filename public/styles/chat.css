@@ -9,43 +9,53 @@
     justify-content:center;
     height: 100vh;
     flex-flow: column nowrap;
-    background-color:whitesmoke;
+    background-color:rgb(255, 153, 0);
 }
 
 header{
     height:5vh;
 }
+header h2{
+    color:white;
+}
 
 .menu{
     width:500px;
     height:95vh;
-    background-color:rgb(7, 5, 19);
+    background-color:rgb(255, 255, 255);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.250);
     display:grid;
 
     grid-template-rows:1fr 50px;
+
+    border-radius:5px;
+    overflow: hidden;
+    
 }
 
 .chat{
     width:100%;
     display:flex;
     flex-flow: column nowrap;
+    align-items: flex-start;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.250);
 
     grid-row: 1 / 2;
 
     overflow-y:auto;
+    overflow-wrap: break-word;
+    overflow-x: none;
 
 }
 
 .chat::-webkit-scrollbar-track{
-    background-color:rgb(0, 0, 0);
+    background-color:rgb(231, 231, 231);
 }
 .chat::-webkit-scrollbar{
     width:5px;
 }
 .chat::-webkit-scrollbar-thumb{
-    background-color: rgb(46, 23, 179);
+    background-color: rgb(190, 190, 190);
     border-radius: 2px;
 }
 
@@ -56,21 +66,26 @@ header{
     font-size:17pt;
     text-align: end;
     background:none;
-    border: .5px solid rgb(0, 0, 134);
-    color:white;
+    color:rgb(39, 39, 39);
     padding:2px;
+    background-color: rgb(235, 235, 235);
+    border:none;
+    box-shadow: 0px 0px 5px inset rgba(0, 0, 0, 0.24);
+}
+.chatbar:focus{
+    background-color: rgb(226, 226, 226);
 }
 
-.chatbar:focus{
-    border: 1px solid rgb(0, 89, 255);
-}
 
 .mensagem{
     margin:5px;
-    color:white;
+    color:rgb(39, 39, 39);
     padding: 5px;
+    font-size:13pt;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    max-width: 95%;
 }
-
 
 
 @media(max-width:500px){

@@ -21,7 +21,7 @@ function sendMessage(e) {
 
 
 socket.on('chat', msg => {
-    const msgHTML = document.createElement('div')
+    const msgHTML = document.createElement('p')
     msgHTML.className = 'mensagem'
     msgHTML.loading = 'lazy'
     msgHTML.textContent = msg
