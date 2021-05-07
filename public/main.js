@@ -22,7 +22,11 @@ function sendMessage(e) {
 
 socket.on('chat', msg => {
     const { author, text } = JSON.parse(msg)
-    loadMessage(`${author}: ${text}`, 'mensagem')
+    if (author == nome) {
+        loadMessage(`Você: ${text}`, 'self')
+    } else {
+        loadMessage(`${author}: ${text}`, 'mensagem')
+    }
 })
 
 socket.on('warn', warning => {

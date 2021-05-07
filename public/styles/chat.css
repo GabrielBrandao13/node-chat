@@ -92,7 +92,7 @@
     background-color:rgb(19, 19, 19);
 }
 
-.mensagem, .aviso{
+.mensagem, .aviso, .self{
     margin:5px;
     color:rgb(39, 39, 39);
     padding: 5px;
@@ -110,6 +110,10 @@
     width:95%;
     max-width:unset;
     text-align: center;
+}
+.self{
+    align-self:flex-end;
+    background-color:rgb(20, 123, 172)
 }
 
 

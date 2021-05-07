@@ -24,10 +24,11 @@
 
 
     <script src="/socket.io/socket.io.js"></script>
+    <script> const nome = '<%= nome %>'</script>
     <script src="./main.js"></script>
 
     <script>
-        socket.emit('login', '<%= nome %>')
+        socket.emit('login', nome)
     </script>
 </body>
 
