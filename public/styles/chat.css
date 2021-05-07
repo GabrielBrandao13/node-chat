@@ -99,10 +99,12 @@
     font-size:13pt;
     background-color: whitesmoke;
     border-radius: 5px;
-    max-width: 95%;
+    max-width: 60%;
 }
 
-
+.mensagem{
+    background-color:rgb(192, 141, 0);
+}
 
 .aviso{
     align-self:center;
@@ -113,7 +115,7 @@
 }
 .self{
     align-self:flex-end;
-    background-color:rgb(20, 123, 172)
+    background-color:rgb(7, 199, 0);
 }
 
 
