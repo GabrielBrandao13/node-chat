@@ -22,6 +22,7 @@ io.on('connection', socket => {
         // console.log(`${users[socket.id]} desconectou-se!`)
         io.emit('warn', `${users[socket.id]} saiu da conversa.`)
         delete users[socket.id]
+        io.emit('users', JSON.stringify(users))
     })
 
     socket.on('chat', msg => {
@@ -35,6 +36,7 @@ io.on('connection', socket => {
     socket.on('login', user => {
         users[socket.id] = user
         io.emit('warn', `${users[socket.id]} entrou na conversa.`)
+        io.emit('users', JSON.stringify(users))
         // console.log('usuario logou')
     })
 
