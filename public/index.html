@@ -14,13 +14,12 @@
         <h1>Chat</h1>
         <form action="chat" class="menu" method="POST">
             <label for="nome" class="label-name">Escreva seu nome:</label>
-            <input type="text" name="nome" placeholder="Francisco Nogueira" class="input-name" />
+            <input type="text" name="nome" placeholder="Francisco Nogueira" class="input-name" required />
+            <label for="nome" class="invalid-warn hidden">Preencha este campo</label>
             <button type="submit">Enviar</button>
         </form>
     </div>
-    <script>
-        document.querySelector('input.input-name').focus()
-    </script>
+    <script src="scripts/home.js"></script>
 </body>
 
 </html>

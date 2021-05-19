@@ -30,7 +30,6 @@ h1{
     align-items: center;
     justify-content: center;
     border-radius:5px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 .input-name{
@@ -40,9 +39,26 @@ h1{
     padding:5px;
     border-radius: 5px;
 }
+.input-name::-webkit-input-placeholder{
+    color:rgb(128, 128, 128);
+}
+.input-name.error{
+    border: 2px solid red;
+    background-color:rgb(255, 56, 56);
+    color:white;
+}
+.input-name.error::-webkit-input-placeholder{
+    color:white;
+}
+
+.invalid-warn{
+    font-size:9pt;
+    color:rgb(71, 71, 71);
+}
 
 .label-name{
     margin:2px;
+    color:rgb(27, 27, 27);
 }
 
 button[type="submit"]{
@@ -55,6 +71,12 @@ button[type="submit"]{
     cursor:pointer;
     border-radius: 5px;
     margin:5px;
+}
+
+
+.hidden{
+    display:none;
+    pointer-events: none;
 }
 
 @keyframes rainbow{
