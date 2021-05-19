@@ -4,7 +4,7 @@
     padding:0;
 }
 
-.container{
+body{
     display:flex;
     align-items:center;
     justify-content:center;
@@ -17,7 +17,7 @@
 .menu{
     width:100%;
     max-width:750px;
-    height: calc(100vh - 65px);
+    height: 100%;
     background-color:rgb(255, 255, 255);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.250);
     display:grid;
@@ -127,4 +127,11 @@
 .self{
     align-self:flex-end;
     background-color:rgb(7, 199, 0);
+}
+
+
+@media(max-width: 500px){
+    body{
+        height: calc(100vh - 65px);
+    }
 }
